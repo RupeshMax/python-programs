@@ -1,13 +1,15 @@
-x=int(input("Enter the number:"))
+num=int(input("Enter the number:"))
 i=0
-j=0
-k=1
-while (i<x):
+first=0
+second=1
+list1=[]
+while (i<num):
     if (i<=1):
         next=i
     else:
-        next = j+k
-        j=k
-        k=next
-    print(next)
+        next = first+second
+        first=second
+        second=next
+    list1.append(next)
     i += 1
+print(*list1)
