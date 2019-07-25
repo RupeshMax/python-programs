@@ -1,0 +1,21 @@
+num = int(input("Enter the number:"))
+list1=[]
+gap=[]
+str1=""
+if (1<num):
+    y = num % 2
+    list1.append(y)
+     
+while (1<num):
+    x = num//2
+    y = x % 2
+    list1.append(y)
+    num = x
+print(list1)
+value1=int(str1.join(map(str,list1)))
+print(value1)
+
+for i in range (len(list1)):
+    if (list1[i]==1):
+        gap.append(i)
+        
