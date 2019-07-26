@@ -13,13 +13,13 @@ print(value1)
 for i in range (len(list1)):
     if (list1[i]==1):
         gap.append(i)        
-print(gap)
+#print(gap)
 for i in range(len(gap)-1):
     x= gap[i+1] - gap[i]-1
     zero.append(x)
-print(zero)
+    print("no",i," binary gap =",x)
 if (len(zero)<1):
     print("no binary gap")
 else:
-    print(max(zero))
+    print("maximum binary gap",max(zero))
     
