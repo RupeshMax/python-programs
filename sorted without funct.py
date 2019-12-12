@@ -1,3 +1,8 @@
+sorted with funct:
+a=sorted(d.items(),key =(lambda x:x[1]['sci']))
+print((a))
+
+sorted without funct:
 d={'ram':{'eng':40,'sci':60},'arun':{'eng':70,'sci':50},'joy':{'eng':10,'sci':40}}
 l1,l3=[],[]
 print(d)
@@ -33,3 +38,7 @@ for i in range(len(l2)):
             d1[k]['sci']=l3[i]
 print(d1)
 
+input:
+{'ram': {'eng': 40, 'sci': 60}, 'arun': {'eng': 70, 'sci': 50}, 'joy': {'eng': 10, 'sci': 40}}
+output:
+{'joy': {'eng': 10, 'sci': 40}, 'ram': {'eng': 40, 'sci': 60}, 'arun': {'eng': 70, 'sci': 50}}
