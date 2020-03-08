@@ -25,6 +25,8 @@ if __name__=="__main__":
     x=int(input("Option:"))
     print()
     while x<5:
+        #-------------------Insertion-------------------
+        
         if x==1:
             print("----------------Choose the which position---------------------")
             print(" 1.At Beginning \n 2.At Middle \n 3.At End")
@@ -60,7 +62,9 @@ if __name__=="__main__":
                     endAddress=endAddress.next
                 address.next=endNode
                 LL.append(endNode.node)
-                    
+
+        #-------------------Deletion-------------------
+                
         if x==2:
             print("----------------Choose the which position---------------------")
             print("  1.At Beginning \n  2.At Middle \n  3.At End")
@@ -97,6 +101,8 @@ if __name__=="__main__":
                     endNode.next=None
                 LL.pop()
 
+        #-------------------Updation--------------------
+
         if x==3:
             position=int(input("Enter the position:"))
             temp=list1.head
@@ -104,9 +110,18 @@ if __name__=="__main__":
                 temp=temp.next
             temp.node=(int(input("Enter the new element:")))
             LL[position-1]=temp.node
+
+        #-------------------Displaying-------------------
                 
         if x==4:
             list1.printlinkedlist()
+
+        #-----------------Exit-----------------------
+
+        if x==5:
+            print("Sucessfully LinkedList Constructed")
+            exit()
+
         print("\nLinked list [",*LL,"]")
         print()
         print("----------------Choose the any one---------------------")
