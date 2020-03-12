@@ -5,7 +5,7 @@ z=(y//2)-1
 for i in range(1,x*2,2):
     if i<x:
         #print('-'*(z)+('.|.'*i)+('-'*(z)))
-        print(('.|.'*a).center(y,'-'))
+        print(('.|.'*i).center(y,'-'))
         z-=3
         a=i
     elif i>x:
