@@ -1,4 +1,4 @@
-d={'{':'}','[':']','(':')'}
+d={'}':'{',']':'[',')':'('}
 for i in range(int(input())):
     y=list(input())
     while len(y)>0:
