@@ -1,49 +1,51 @@
 import copy
-def rotate(start,end,a):
-    for i in range(a,end+1):
+def rotate(start,end,a,y):
+    for i in range(a,y):
         if i==a:
             ans[start][i]=l1[start][i+1]
             ans[end][i]=l1[end-1][i]
-        elif i==end:
+        elif i==y-1:
             ans[start][i]=l1[start+1][i]
             ans[end][i]=l1[end][i-1]
         else:
             ans[start][i]=l1[start][i+1]
             ans[end][i]=l1[end][i-1]
 
-    for i in range(a+1,end):
+    for i in range(a+1,u-1):
             ans[i][start]=l1[i-1][start]
-            ans[i][end]=l1[i+1][end]
+            ans[i][y-1]=l1[i+1][y-1]
 
 x=int(input())
-y=int(input())
-z=int(input())
-if x==y:
+q=int(input())
+z=int(input())  
+
+ans=[[0]*q for i in range(x)]
+l1=[[int(input()) for j in range(q)] for i in range(x)]
+
+
+for i in l1:
+    print(*i)
+
     
-    ans=[[0]*x for i in range(x)]
-    l1=[[int(input()) for j in range(y)] for i in range(x)]
+for j in range(z):
+    start,end,y=0,x-1,q
+    u=x
+    for i in range(x//2):
+        rotate(start,end,i,y)
+        start+=1
+        end-=1
+        y-=1
+        u-=1
+    if x==y and x%2!=0:
+        a=x//2
+        ans[a][a]=l1[a][a]
+    l1=copy.deepcopy(ans)
 
-    for i in l1:
-        print(*i)
-
-    
-    for j in range(z):
-        start,end=0,x-1
-        for i in range(x//2):
-            rotate(start,end,i)
-            start+=1
-            end-=1
-        if x%2!=0:
-            a=x//2
-            ans[a][a]=l1[a][a]
-        l1=copy.deepcopy(ans)
-
-        print()
+print()
         
-        for i in ans:
-            print(*i)
-else:
-    print("Both x and y is not equal")
+for i in ans:
+    print(*i)
+
 
 '''
 ======= Testcase -1 ======
@@ -115,4 +117,38 @@ else:
 6 7 12 17 24
 11 16 21 22 23
 >>>
+======= Testcase -3 ======
+4
+5
+2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+1 2 3 4 5
+6 7 8 9 10
+11 12 13 14 15
+16 17 18 19 20
+
+3 4 5 10 15
+2 9 14 13 20
+1 8 7 12 19
+6 11 16 17 18
+>>> 
 '''
